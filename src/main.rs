@@ -58,8 +58,10 @@ fn main() -> io::Result<()> {
     output_file.write_all(&onnx_content)?; // ONNX content
 
     println!("Combined file written to {}", output_path);
-
+    let data= import("model.bq").unwrap();
+    println!("{:#?}", data);
     Ok(())
+    
 }
 
 #[derive(Deserialize, Debug)]
